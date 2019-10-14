@@ -14,9 +14,9 @@ class CreateModelHasRolesTable extends Migration
     public function up()
     {
         Schema::create('model_has_roles', function (Blueprint $table) {
-            $table->integer('role_id')->length(10);
+            $table->unsignedInteger('role_id')->length(10);
             $table->string('model_type', 191)->index();
-            $table->bigInteger('model_id')->length(20)->index();    
+            $table->unsignedBigInteger('model_id')->length(20)->index();    
             $table->primary(array('role_id', 'model_type', 'model_id'));
         });
     }
